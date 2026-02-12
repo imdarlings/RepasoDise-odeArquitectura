@@ -2,7 +2,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerControles : MonoBehaviour
+public class PLAYER_CONTROLADOR : MonoBehaviour
 
 
 {

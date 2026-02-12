@@ -10,7 +10,7 @@ public class PLAYER_VISTA : MonoBehaviour
     [SerializeField] private Material material2;
 
     [Header("clases")]
-    [SerializeField] private PlayerController controller;
+    [SerializeField] private PLAYER_CONTROLADOR controller;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

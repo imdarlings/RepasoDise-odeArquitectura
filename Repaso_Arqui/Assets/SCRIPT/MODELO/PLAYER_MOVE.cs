@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour
+public class PLAYER_MOVE : MonoBehaviour
 {
 
     [SerializeField]

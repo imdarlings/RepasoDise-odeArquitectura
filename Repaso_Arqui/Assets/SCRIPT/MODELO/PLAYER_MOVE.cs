@@ -4,7 +4,7 @@ public class PLAYER_MOVE : MonoBehaviour
 {
 
     [SerializeField]
-    private PlayerControles playerController;
+    private PlayerController playerController;
     [SerializeField]
     private Rigidbody rb;
 
@@ -21,7 +21,7 @@ public class PLAYER_MOVE : MonoBehaviour
     {
         if (isMove)
         {
-            rb.linearVelocity = playerController.DirectionJugador() * velocidad;
+            rb.linearVelocity = Vector3.forward * playerController.DirectionJugador() * velocidad;
         }
     }
 }

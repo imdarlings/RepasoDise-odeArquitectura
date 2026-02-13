@@ -15,7 +15,7 @@ public class PLAYER_VISTA : MonoBehaviour
     void Start()
     {
         render = GetComponent<Renderer>();
-        controller = GetComponent<PlayerController>();
+        controller = GetComponent<PLAYER_CONTROLADOR>();
 
 
     }

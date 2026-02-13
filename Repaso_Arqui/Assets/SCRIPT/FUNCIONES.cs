@@ -4,6 +4,11 @@ public class FUNCIONES : MonoBehaviour
 {
     private int _numeroEntero = 2;
 
+    public FUNCIONES(int numeroEntero)
+    {
+        _numeroEntero = numeroEntero;
+    }
+
     public CLASE listadeestudiantes = new CLASE();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -64,4 +64,16 @@ public class CalculatorUI : MonoBehaviour
         currentOperator = "";
         displayText.text = "0";
     }
+
+    public void OnBackspacePressed()
+    {
+        if (currentInput.Length > 0)
+        {
+            currentInput = currentInput.Substring(0, currentInput.Length - 1);
+            displayText.text = currentInput;
+
+            if (currentInput == "")
+                displayText.text = "0";
+        }
+    }
 }

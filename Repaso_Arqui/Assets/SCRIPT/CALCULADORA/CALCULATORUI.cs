@@ -76,4 +76,19 @@ public class CalculatorUI : MonoBehaviour
                 displayText.text = "0";
         }
     }
+
+    public void OnPercentagePressed()
+    {
+        // Implementa aquí la lógica para el botón de porcentaje.
+        // Por ejemplo, podrías convertir el currentInput en porcentaje:
+        if (!string.IsNullOrEmpty(currentInput))
+        {
+            if (float.TryParse(currentInput, out float value))
+            {
+                value = value / 100f;
+                currentInput = value.ToString();
+                displayText.text = currentInput;
+            }
+        }
+    }
 }

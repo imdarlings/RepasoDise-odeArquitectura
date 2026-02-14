@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class MULTIPLICACION : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class Multiplicacion : IOperacion
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public float Calcular(float a, float b)
+        {
+            return a * b;
+        }
     }
 }

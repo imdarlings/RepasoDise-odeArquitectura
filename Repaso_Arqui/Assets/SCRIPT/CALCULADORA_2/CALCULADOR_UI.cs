@@ -34,9 +34,12 @@ public class CALCULADOR_UI : MonoBehaviour
     }
 
     public void Calcular(string operador)
-    { 
-        float.TryParse(_inputA.text, out float a);
-        float.TryParse(_inputB.text, out float b);
+    {
+        if ((!float.TryParse(_inputA.text, out float a) || (!float.TryParse(_inputB.text, out float b))
+            {
+            _resultado.text = "Vaya a estudiar.";
+        }
+
 
         switch (_operador)
         {
@@ -53,7 +56,15 @@ public class CALCULADOR_UI : MonoBehaviour
                 break;
 
             case Operador.Division:
-                _resultado.text = (a / b).ToString();
+                if (b== 0)
+                {
+                    _resultado.text = "Llorar";
+                }
+                else
+                {
+                    _resultado.text = (a / b).ToString();
+                }
+               
                 break;
 
         default:

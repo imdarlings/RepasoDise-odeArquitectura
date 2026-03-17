@@ -2,59 +2,34 @@ using UnityEngine;
 
 public class AgentView : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
-    [SerializeField] private AgentModel _agentModel;
-
-    private bool isMoving = false;
-    private bool isRunning = false;
-
-    [SerializeField] private float runThreshold = 0.8f;
-
-    void Update()
+    public enum Animations
     {
-        float magnitude = _agentModel.MagnitudMovimiento;
+        Caminar,
+        Correr,
+        Daño,
+        Vida,
+        Quieto
+    }
+    public Animator animator;
+    Animations animations;
 
-        // CORRER
-        if (magnitude > runThreshold)
+    public void AnimationState()
+    {
+        switch (animations) 
         {
-            if (!isRunning)
-            {
-                _animator.SetTrigger("Correr");
-                isRunning = true;
-                isMoving = true;
-            }
-        }
-        // CAMINAR
-        else if (magnitude > 0)
-        {
-            if (!isMoving || isRunning)
-            {
-                _animator.SetTrigger("Caminar");
-                isMoving = true;
-                isRunning = false;
-            }
-        }
-        // QUIETO
-        else
-        {
-            if (isMoving)
-            {
-                _animator.SetTrigger("Parar");
-                isMoving = false;
-                isRunning = false;
-            }
+            case Animations.Vida:
+                animator.SetTrigger("Vida");
+                break;
+            case Animations.Daño:
+                animator.SetTrigger("Daño");
+                break;
+            default:
+                break;
+
         }
     }
+   
 
-    // VIDA
-    public void PlayHeal()
-    {
-        _animator.SetTrigger("Vida");
-    }
 
-    // DAÑO
-    public void PlayDamage()
-    {
-        _animator.SetTrigger("Daño");
-    }
+   
 }
